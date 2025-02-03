@@ -43,6 +43,14 @@
                     <p style="color:blue; font-size:11px"><i>Published {{$post->created_at->diffForHumans()}} by {{$post->user->name}}</i></p>
                     <p style="display: inline;font-weight:bold">Category </p><button class="btn btn-success btn-sm">{{$post->category->name}}</button>
                     <p class="card-text">{{$post->description}}</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h6>Tags</h6>
+                            @foreach($post->tags as $postTag)
+                            <button class="btn btn-success btn-sm">{{$postTag->name}}</button>
+                            @endforeach
+                        </div>
+                    </div>
                     <button data-post-id="{{$post->id}}" type="button" class="makePostComment btn btn-primary btn-sm" data-toggle="modal" data-target="#makePostCommentModal">
                         Comment on this post
                     </button>

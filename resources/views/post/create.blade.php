@@ -31,10 +31,19 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="description">Category</label>
+                    <label for="description">Post Category</label>
                     <select class="form-control" name="category_id" id="category_id">
                         @php
                         echo \App\Models\Category::getDropDownList();
+                        @endphp
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Select Tags (Multiple tags can be attached)</label>
+                    <select class="form-control" name="tags_id[]" id="tags_id" multiple="multiple">
+                        @php
+                        echo \App\Models\Tag::getDropDownList();
                         @endphp
                     </select>
                 </div>
@@ -49,3 +58,13 @@
 </div>
 
 @endsection
+
+@push('scripts')
+
+<script>
+    $(document).ready(function() {
+        $('#tags_id').select2();
+    })
+</script>
+
+@endpush

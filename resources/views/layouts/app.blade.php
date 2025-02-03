@@ -25,14 +25,44 @@
     <!-- Toastr -->
     <link rel="stylesheet" href="{{asset('plugins/toastr/toastr.min.css')}}">
 
+    <!-- Select2 -->
+    <link href="{{asset('plugins/select2/select2.min.css')}}" rel="stylesheet" />
+
     <!-- Jquery -->
     <script type="text/javascript" src="{{asset('js/jquery-3.7.1.min.js')}}">
     </script>
     <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}} "></script>
 
+    <style>
+        /* Preloader styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #preloader img {
+            width: 250px;
+            height: auto;
+        }
+    </style>
+
 </head>
 
 <body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img width="100" src="{{ asset('images/preloader_blue.gif') }}" alt="Loading...">
+    </div>
+
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -77,6 +107,10 @@
                             <a class="nav-link" href="{{ route('categories.index') }}">{{ __('Categories') }}</a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('tags.index') }}">{{ __('Tags') }}</a>
+                        </li>
+
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
@@ -108,15 +142,41 @@
     <!-- Toastr -->
     <script src="{{asset('plugins/toastr/toastr.min.js')}}"></script>
 
+    <!-- Select2 -->
+    <script src="{{asset('plugins/select2/select2.min.js')}}"></script>
+
+    <!-- Preloader -->
+    <script>
+        $(window).on('load', function() {
+            $('#preloader').fadeOut('slow', function() {
+                $(this).remove();
+                $('#app').fadeIn('slow');
+            });
+        });
+    </script>
+
     @stack('scripts')
     @if (session('message'))
     <script>
         $(document).ready(function() {
             var sessionFlashMessage = " {{ session('message') }}";
+            toastr.options = {
+                "closeButton": true,
+                "debug": true,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-bottom-right",
+                "preventDuplicates": false,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut",
+            }
             toastr.info(sessionFlashMessage);
         });
     </script>
     @endif
-</body>
-
-</html>

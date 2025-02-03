@@ -28,3 +28,5 @@ Route::get('posts/filter', [App\Http\Controllers\PostController::class, 'filterB
 Route::resource('posts', App\Http\Controllers\PostController::class);
 
 Route::resource('comments', App\Http\Controllers\CommentController::class);
+
+Route::resource('tags', App\Http\Controllers\TagController::class);

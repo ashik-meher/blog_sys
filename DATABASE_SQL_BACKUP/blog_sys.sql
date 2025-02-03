@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2025 at 09:25 AM
+-- Generation Time: Feb 03, 2025 at 05:01 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -83,7 +83,7 @@ INSERT INTO `comments` (`id`, `created_at`, `updated_at`, `content`, `post_id`, 
 (9, '2025-01-21 04:21:16', '2025-01-21 04:21:16', 'greate news!', 4, NULL, 1),
 (10, '2025-01-21 04:22:37', '2025-01-21 04:22:37', 'Great work taskin', 7, NULL, 1),
 (11, '2025-01-21 04:27:21', '2025-01-21 04:27:21', 'Greate work!', 3, NULL, 1),
-(12, '2025-01-21 04:37:45', '2025-01-21 23:36:48', 'Hope bangladesh pacers will grow faster than ever. kudos!', 7, NULL, 1),
+(12, '2025-01-21 04:37:45', '2025-01-22 23:41:12', 'Hope bangladesh pacers as well as spinners will grow faster than ever. kudos!', 7, NULL, 1),
 (13, '2025-01-21 04:38:57', '2025-01-21 04:38:57', 'please save our brothers and sisters in palestine', 6, NULL, 1),
 (14, '2025-01-21 04:39:17', '2025-01-21 04:39:17', 'we can not expect much from him.', 6, NULL, 1),
 (15, '2025-01-21 04:40:39', '2025-01-21 04:40:39', 'we demand justice for our sister', 5, NULL, 1),
@@ -100,7 +100,9 @@ INSERT INTO `comments` (`id`, `created_at`, `updated_at`, `content`, `post_id`, 
 (27, '2025-01-22 01:47:34', '2025-01-22 01:47:34', 'great news!', 11, NULL, 3),
 (28, '2025-01-22 01:58:28', '2025-01-22 01:58:28', 'Why he resigns!', 11, NULL, 3),
 (29, '2025-01-22 01:59:58', '2025-01-22 01:59:58', 'great insights!', 7, NULL, 3),
-(30, '2025-01-22 02:21:40', '2025-01-22 02:21:40', 'great news!', 10, NULL, 3);
+(30, '2025-01-22 02:21:40', '2025-01-22 02:21:40', 'great news!', 10, NULL, 3),
+(31, '2025-01-23 04:50:02', '2025-01-23 04:50:02', 'I think Android OS is better than i phone!', 14, NULL, 1),
+(32, '2025-01-24 22:31:36', '2025-01-24 22:31:36', 'Hope for the best in next match against West Indies!', 15, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -144,7 +146,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (7, '2025_01_20_090239_create_categories_table', 2),
 (8, '2025_01_20_101539_add_user_id_to_posts_table', 3),
 (9, '2025_01_20_101634_add_user_id_to_categories_table', 3),
-(10, '2025_01_20_101714_add_user_id_to_comments_table', 3);
+(10, '2025_01_20_101714_add_user_id_to_comments_table', 3),
+(11, '2025_01_23_062949_create_tags_table', 4),
+(12, '2025_01_23_095610_create_post_tag_table', 5);
 
 -- --------------------------------------------------------
 
@@ -210,7 +214,62 @@ INSERT INTO `posts` (`id`, `created_at`, `updated_at`, `title`, `description`, `
 (10, '2025-01-22 01:04:43', '2025-01-22 01:04:43', 'Sabina Yasmin set to return to music', 'Towards the end of 2023, Sabina Yasmin performed in several stage shows in Sydney, Melbourne, and Brisbane, Australia. After that, she was not seen on stage again. As rumours about her health began to spread, the renowned artist felt compelled to release an audio statement. \r\n\r\nYesterday, Sabina Yasmin revealed to Prothom Alo that she had undergone surgery on February 7 of the previous year, followed by 30 sessions of radiotherapy over a span of four months. Only her closest circle knew about these events. In her own words, \"It was a challenging fight, but I stayed determined.\"', 4, NULL, 2),
 (11, '2025-01-22 01:36:48', '2025-01-22 01:36:48', 'Sarjis resigns as general secretary of July Shaheed Smriti Foundation', 'Sarjis Alam, a coordinator of the Students Against Discrimination, has resigned as general secretary of the July Shaheed Smriti Foundation.\r\n\r\nHe shared this information in a post on his verified Facebook profile this morning.\r\n\r\n\"I am no longer the general secretary of the July Shaheed Smriti Foundation. Changes have been made to the foundation\'s constitution, structure, and working process to accelerate its progress,\" he wrote.\r\n\r\nHe further said that the executive committee will now oversee the foundation\'s operations, with the chief executive officer (CEO) leading the office.', 6, NULL, 2),
 (12, '2025-01-22 01:41:28', '2025-01-22 01:41:28', 'Turks and Caicos Islands: Postcards from paradise, voices from the shadows', 'Located in the British West Indies, Turks and Caicos Islands\' white sand beaches, turquoise waters, and year-round pleasant weather make them an ideal destination for those who love tropical getaways. As the islands boast some of the world\'s most beautiful beaches, they attract the rich and famous, including Hollywood A-listers. Stunning waterfront villas, many with luxurious yachts docked outside, are a common sight.\r\n\r\nIt was a 3.5-hour flight from Philadelphia to Providenciales, locally known as Provo, the main island. As our plane approached TCI, I looked out the window and could not help but whisper, \"Wow!\"\r\n\r\nThe first sight of the turquoise waters captivated my heart; I could not stop gazing at the pristine beauty of the Caribbean waters. It was our winter getaway to a tropical destination and our first time staying at an all-inclusive resort. We booked a one-bedroom ocean-front suite for four nights at the Blue Haven. And I must say that I felt pampered every day during our five-day stay.', 9, NULL, 2),
-(13, '2025-01-22 01:43:20', '2025-01-22 01:43:20', 'Musk can buy TikTok if he wants to, says Trump', 'US President Donald Trump has said he would support Elon Musk, the billionaire CEO of Tesla, if he decided to purchase the social media app TikTok. Trump\'s remarks came as the platform, used by 170 million Americans, faces a potential ban unless its Chinese parent company, ByteDance, sells its US operations due to national security concerns.\r\n\r\nWhen asked about Musk\'s involvement, Trump said, \"If he wanted to buy it, I\'d be open to it\", as per a Reuters report. Trump also revealed discussions with TikTok\'s major stakeholders and floated the idea that any sale should benefit the US financially, suggesting, \"Buy it and give half to the United States of America.\"', 2, NULL, 3);
+(13, '2025-01-22 01:43:20', '2025-01-22 01:43:20', 'Musk can buy TikTok if he wants to, says Trump', 'US President Donald Trump has said he would support Elon Musk, the billionaire CEO of Tesla, if he decided to purchase the social media app TikTok. Trump\'s remarks came as the platform, used by 170 million Americans, faces a potential ban unless its Chinese parent company, ByteDance, sells its US operations due to national security concerns.\r\n\r\nWhen asked about Musk\'s involvement, Trump said, \"If he wanted to buy it, I\'d be open to it\", as per a Reuters report. Trump also revealed discussions with TikTok\'s major stakeholders and floated the idea that any sale should benefit the US financially, suggesting, \"Buy it and give half to the United States of America.\"', 2, NULL, 3),
+(14, '2025-01-23 04:42:41', '2025-01-23 04:42:41', 'Apple Mac Mini M4: Small size, big power', 'Apple released a series of press updates during the last week of October 2024 to introduce their entire Mac lineup to the M4 chip. One of these additions was the new Mac Mini. As a longtime Windows user, I have been using the base model of the Mac Mini M4 as my go-to desktop for the past three weeks, and I must admit, I am impressed with the performance of this machine. The base Mac Mini M4, with its combination of performance, efficiency, and value, I believe it is one of the most incredible deals in tech right now. Let\'s explore how.', 2, NULL, 1),
+(15, '2025-01-24 22:30:28', '2025-01-24 22:30:28', 'No direct qualification to WC for Tigresses as Joty and Co suffer defeat in final WI ODI', 'Bangladesh suffered an eight-wicket defeat in their third and final ODI against the West Indies at Warner Park in St Kitts on Friday, a result that not only saw the Tigresses lose the three-match series 2-1 but also denied them direct qualification to the ICC Women\'s Cricket World Cup 2025. \r\n\r\nAfter bouncing back from a crushing nine-wicket defeat in the series opener with a convincing 60-run win over the Windies in the second ODI -- which was also the Tigresses\' first win against the Windies -- Bangladesh needed a win in this game to claim their maiden ODI series victory over the Windies and also seal the final qualification spot for the World Cup.', 8, NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_tag`
+--
+
+CREATE TABLE `post_tag` (
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `post_id` bigint(20) UNSIGNED NOT NULL,
+  `tag_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `post_tag`
+--
+
+INSERT INTO `post_tag` (`created_at`, `updated_at`, `post_id`, `tag_id`) VALUES
+(NULL, NULL, 14, 4),
+(NULL, NULL, 14, 5),
+(NULL, NULL, 14, 6),
+(NULL, NULL, 15, 2),
+(NULL, NULL, 15, 8);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tags`
+--
+
+CREATE TABLE `tags` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tags`
+--
+
+INSERT INTO `tags` (`id`, `created_at`, `updated_at`, `name`, `deleted_at`, `user_id`) VALUES
+(1, '2025-01-23 00:55:55', '2025-01-23 00:55:55', 'fashion', NULL, 1),
+(2, '2025-01-23 00:56:03', '2025-01-23 00:56:03', 'sports', NULL, 1),
+(3, '2025-01-23 01:46:43', '2025-01-23 01:46:43', 'politics', NULL, 1),
+(4, '2025-01-23 01:48:23', '2025-01-23 01:48:23', 'lifestyle', NULL, 1),
+(5, '2025-01-23 01:49:10', '2025-01-23 01:49:10', 'tech', NULL, 1),
+(6, '2025-01-23 01:54:38', '2025-01-23 01:54:38', 'science', NULL, 1),
+(7, '2025-01-23 01:55:01', '2025-01-23 01:55:01', 'education', NULL, 1),
+(8, '2025-01-23 01:57:00', '2025-01-23 01:57:00', 'national', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -288,6 +347,19 @@ ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `post_tag`
+--
+ALTER TABLE `post_tag`
+  ADD UNIQUE KEY `post_tag_post_id_tag_id_unique` (`post_id`,`tag_id`),
+  ADD KEY `post_tag_tag_id_foreign` (`tag_id`);
+
+--
+-- Indexes for table `tags`
+--
+ALTER TABLE `tags`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -308,7 +380,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -320,7 +392,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -332,13 +404,30 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `tags`
+--
+ALTER TABLE `tags`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `post_tag`
+--
+ALTER TABLE `post_tag`
+  ADD CONSTRAINT `post_tag_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `post_tag_tag_id_foreign` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

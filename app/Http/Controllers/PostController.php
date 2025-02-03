@@ -70,12 +70,14 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        Post::create([
+        $post = Post::create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'category_id' => $request->input('category_id'),
             'user_id' => Auth::user()->id
         ]);
+
+        $post->tags()->attach($request->input('tags_id'));
 
         session()->flash('message', 'Post upload successful');
 
